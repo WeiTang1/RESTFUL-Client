@@ -1,0 +1,11 @@
+{
+  "name": "express-html",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-resource": "^1.6.5",
+    "angular-route": "^1.6.5",
+    "express": "^4.11.0",
+    "ng-resource": "^1.3.2"
+  }
+}

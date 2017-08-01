@@ -1,0 +1,51 @@
+<html ng-app = 'myApp'>
+<head>
+    <title>Simple CRUD with Express</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div >
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">CRUD</a>
+            <ul class="nav navbar-nav">
+                <li class = "{'active':isActive('/createUser'}">
+                    <a href="/#!createUser">Create User</a>
+                </li>
+                <li class = "{isActive('/retrie'}">
+                    <a href="#!retriveUser">Retrive User</a>
+                </li>
+                <li class = "{'active':isActive('/listUser'}">
+                    <a href="#!updateUser">Update User</a>
+                </li>
+                <li class = "{'active':isActive('/listUser'}">
+                    <a href="#!deleteUser">Delete User</a>
+                </li>
+                <li class = "{'active':isActive('/listUser'}">
+                    <a href="#!listUser">List User</a>
+                </li>
+                <li>
+                    <a href="/sitemap">Sitemap</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div ng-view>
+    </div>
+</div>
+<script src = 'lib/angular/angular.js' type = 'application/javascript'></script>
+<script src = 'lib/angular-route/angular-route.js' type = 'application/javascript'></script>
+<script src = 'lib/angular-resource/angular-resource.js' type = 'application/javascript'></script>
+
+<script src = 'scripts/app/app.js' type = 'application/javascript'></script>
+<script src = 'scripts/controller/listUserController.js' type = 'application/javascript'></script>
+<script src = 'scripts/controller/createUserController.js' type = 'application/javascript'></script>
+<script src = 'scripts/controller/retriveUserController.js' type = 'application/javascript'></script>
+
+<script src = 'scripts/service/UserResource.js' type = 'application/javascript'></script>
+
+</body>
+</html>
