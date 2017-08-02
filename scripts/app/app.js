@@ -13,4 +13,12 @@ app.config(function($routeProvider){
             templateUrl:'templates/RetriveUser.html',
             controller:retriveUserController
         })
+        .when('/deleteUser',{
+            templateUrl: ' templates/DeleteUser.html',
+            controller:deleteUserController
+        })
+        .when('/updateUser',{
+            templateUrl:'templates/updateUser.html',
+            controller:updateUserController
+        })
 });

@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Update User:</h2>
+    <form name = 'userForm' ng-submit="submitForm(userForm.$valid)" novalidate>
+        <div ng-class="{'has-error':userForm.firstName.$invalid && !userForm.firstName.$pristine}" >
+            <div class="input-group" >
+                <input name = 'firstName' type="text" class="form-control" ng-model="firstName" placeholder="Enter first name to search for..." required>
+                <span class="input-group-btn"><button class="btn btn-default" type="submit">Go!</button> </span>
+            </div>
+            <p ng-show = 'userForm.firstName.$invalid && !userForm.firstName.$pristine' class = 'help-block'>Your First Name is required</p>
+        </div>
+    </form>
+    <p ng-show = '!found && userForm.$submitted' class = 'alert alert-danger'>There's no user with first name: {{firstName}}</p>
+    <p ng-show = 'found && userForm.$submitted' class = 'alert alert-success'>User found:</p>
+    <form ng-if='found' name = 'updateForm' ng-submit="updateUser(userForm.$valid)" novalidate>
+        <div class="form-group" ng-class="{'has-error':userForm.firstName.$invalid && !userForm.firstName.$pristine}">
+            <label>First Name</label>
+            <input type = 'text' name = 'firstName' class='form-control' ng-model="user.firstName" required ng-disabled="updated">
+            <p ng-show = 'userForm.firstName.$invalid && !userForm.firstName.$pristine' class = 'help-block'>Your First Name is required</p>
+        </div>
+        <div class="form-group" ng-class = "{'has-error':userForm.lastName.$invalid && !userForm.lastName.$pristine}">
+            <label>Last Name</label>
+            <input type = 'text' name = 'lastName' class='form-control' ng-model="user.lastName" required ng-disabled="updated">
+            <p ng-show = 'userForm.lastName.$invalid && !userForm.lastName.$pristine' class = 'help-block'>Your last Name is required</p>
+        </div>
+        <div>        <button type = 'submit' class='btn btn-primary' ng-disabled="userForm.$invalid" >Submit</button>
+        </div>
+        <p ng-show = 'updated && updateForm.$submitted' class = 'alert alert-success'>updated</p>
+
+    </form>
+</div>

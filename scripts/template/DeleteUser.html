@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Search User:</h2>
+    <form name = 'userForm' ng-submit="submitForm(userForm.$valid)" novalidate>
+        <div ng-class="{'has-error':userForm.firstName.$invalid && !userForm.firstName.$pristine}" >
+            <div class="input-group" >
+                <input name = 'firstName' type="text" class="form-control" ng-model="firstName" placeholder="Enter first name to search for..." required>
+                <span class="input-group-btn"><button class="btn btn-default" type="submit">Delete</button> </span>
+            </div>
+            <p ng-show = 'userForm.firstName.$invalid && !userForm.firstName.$pristine' class = 'help-block'>Your First Name is required</p>
+        </div>
+    </form>
+    <p ng-show = '!found && userForm.$submitted' class = 'alert alert-danger'>There's no user with first name: {{firstName}}</p>
+    <p ng-show = 'found && userForm.$submitted' class = 'alert alert-success'>The following User has been deleted from the database</p>
+    <table class="table table-striped" ng-show = 'found'>
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{user.firstName}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.createdOn}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

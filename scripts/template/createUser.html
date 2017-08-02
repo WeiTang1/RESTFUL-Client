@@ -1,7 +1,7 @@
 
 
 <div class="container">
-    <h2>Find User</h2>
+    <h2>Create User</h2>
     <form name = 'userForm' ng-submit="submitForm(userForm.$valid)" novalidate>
         <div class="form-group" ng-class="{'has-error':userForm.firstName.$invalid && !userForm.firstName.$pristine}">
             <label>First Name</label>
@@ -14,5 +14,6 @@
             <p ng-show = 'userForm.lastName.$invalid && !userForm.lastName.$pristine' class = 'help-block'>Your last Name is required</p>
         </div>
         <button type = 'submit' class='btn btn-primary' ng-disabled="userForm.$invalid" >Submit</button>
+        <p ng-show = 'created && userForm.$submitted' class = 'alert alert-success'>User has been created</p>
     </form>
 </div>
