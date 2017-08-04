@@ -21,4 +21,7 @@ app.config(function($routeProvider){
             templateUrl:'templates/updateUser.html',
             controller:updateUserController
         })
+        .when('/home',{
+            templateURL:'templates/home.html'
+        })
 });
