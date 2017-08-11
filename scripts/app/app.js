@@ -22,6 +22,7 @@ app.config(function($routeProvider){
             controller:updateUserController
         })
         .when('/home',{
-            templateURL:'templates/home.html'
+            templateUrl:'templates/home.html'
         })
+        .otherwise({redirectTo : '/home'});
 });
