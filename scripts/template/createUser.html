@@ -2,6 +2,7 @@
 
 <div class="container">
     <h2>Create User</h2>
+    <p>Fill in the form to create user, feel free to test the error checking!</p>
     <form name = 'userForm' ng-submit="submitForm(userForm.$valid)" novalidate>
         <div class="form-group" ng-class="{'has-error':userForm.firstName.$invalid && !userForm.firstName.$pristine}">
             <label>First Name</label>
