@@ -8,5 +8,4 @@ var service = function($resource){
 
     });
 };
-var myApp = angular.module('myApp');
-myApp.factory('UserAPI',service);
+angular.module('myApp').factory('UserAPI',service);
